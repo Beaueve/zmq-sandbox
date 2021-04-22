@@ -1,0 +1,1 @@
+/usr/bin/g++-7 -g -rdynamic CMakeFiles/zmq-sandbox.dir/main.cpp.o -o zmq-sandbox  -Wl,-rpath,/usr/local/lib /usr/local/lib/libzmq.so.5.2.3 -lpthread -lrt 

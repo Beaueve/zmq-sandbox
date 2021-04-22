@@ -1,0 +1,1 @@
+/usr/bin/g++-7 -g -rdynamic CMakeFiles/server.dir/server.cpp.o -o server  -Wl,-rpath,/usr/local/lib /usr/local/lib/libzmq.so.5.2.3 -lpthread -lrt 

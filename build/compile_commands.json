@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/beau/zmq-sandbox/build",
+  "command": "/usr/bin/g++-7   -g -o CMakeFiles/client.dir/client.cpp.o -c /home/beau/zmq-sandbox/client.cpp",
+  "file": "/home/beau/zmq-sandbox/client.cpp"
+},
+{
+  "directory": "/home/beau/zmq-sandbox/build",
+  "command": "/usr/bin/g++-7   -g -o CMakeFiles/server.dir/server.cpp.o -c /home/beau/zmq-sandbox/server.cpp",
+  "file": "/home/beau/zmq-sandbox/server.cpp"
+}
+]

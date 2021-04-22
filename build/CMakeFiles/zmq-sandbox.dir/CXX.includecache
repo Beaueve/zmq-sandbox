@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/beau/zmq-sandbox/main.cpp
+iostream
+-
+zmq-client.h
+/home/beau/zmq-sandbox/zmq-client.h
+zmq-server.h
+/home/beau/zmq-sandbox/zmq-server.h
+
+/home/beau/zmq-sandbox/zmq-client.h
+iostream
+-
+zmq.h
+-
+
+/home/beau/zmq-sandbox/zmq-server.h
+iostream
+-
+zmq.h
+-
+
