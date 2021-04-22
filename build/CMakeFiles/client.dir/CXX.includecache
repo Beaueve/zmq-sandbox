@@ -9,6 +9,16 @@
 /home/beau/zmq-sandbox/client.cpp
 iostream
 -
+thread
+-
+zmq.hpp
+-
+monitor.h
+/home/beau/zmq-sandbox/monitor.h
+
+/home/beau/zmq-sandbox/monitor.h
+iostream
+-
 zmq.hpp
 -
 

@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/beau/zmq-sandbox/monitor.h
+iostream
+-
+zmq.hpp
+-
+
 /home/beau/zmq-sandbox/server.cpp
 iostream
 -
@@ -15,4 +21,6 @@ string
 -
 thread
 -
+monitor.h
+/home/beau/zmq-sandbox/monitor.h
 

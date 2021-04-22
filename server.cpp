@@ -2,23 +2,9 @@
 #include <zmq.hpp>
 #include <string>
 #include <thread>
+#include "monitor.h"
 
 using namespace zmq;
-
-class connect_monitor_t : public zmq::monitor_t
-{
-public:
-    void on_event_connected(const zmq_event_t &event,
-                            const char *addr) override
-    {
-        std::cout << "got connection from " << addr << std::endl;
-    }
-
-    void on_event_listening(const zmq_event_t &event_, const char *addr_) override
-    {
-        std::cout << "Listening event?" << std::endl;
-    }
-};
 
 int main(int argc, const char **argv)
 {
@@ -34,26 +20,18 @@ int main(int argc, const char **argv)
     connect_monitor_t mon2;
     // here, default is ZMQ_EVENT_ALL
 
-
-    const int events = ZMQ_EVENT_CONNECTED;
-    // Monitor sock using the given transport for internal communication
+    server.bind(addr);
+    
+    //Monitor sock using the given transport for internal communication
     connect_monitor_t mon;
-    mon.init(server, "inproc://conmon", events);
+
+    //mon.init(server, "inproc://conmon", ZMQ_EVENT_ALL);
     std::thread monitor([&] {
-        while (true)
-        {
-            if (!mon.check_event(1000))
-            {
-                std::cout << "timeout" << std::endl;
-            }
-            else
-            {
-                std::cout << "event" << std::endl;
-            }
-        }
+        mon.monitor(server, "inproc://conmon", ZMQ_EVENT_ALL);
     });
 
-    server.bind(addr);
+    //zmq_socket_monitor(server, "inproc://conmon", ZMQ_EVENT_ALL);
+
     message_t sender;
     message_t msg;
     server.recv(sender, recv_flags::none);
